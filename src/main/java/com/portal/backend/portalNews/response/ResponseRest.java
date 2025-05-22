@@ -13,9 +13,9 @@ public class ResponseRest {
     }
     public void setMetadata(String type, String code, String date) {
         HashMap<String, String> metadata = new HashMap<>();
-        mmetadata.put("type", type);
-        mmetadata.put("code", code);
-        mmetadata.put("date", date);
-        this.metadata.add(mmetadata);
+        metadata.put("type", type);
+        metadata.put("code", code);
+        metadata.put("date", date);
+        this.metadata.add(metadata);
     }
 }

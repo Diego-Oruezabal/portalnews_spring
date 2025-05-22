@@ -1,5 +1,6 @@
 package com.portal.backend.portalNews.service;
 
+import com.portal.backend.portalNews.model.New;
 import com.portal.backend.portalNews.model.NewResponseRest;
 import org.springframework.http.ResponseEntity;
 

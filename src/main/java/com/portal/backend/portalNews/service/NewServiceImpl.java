@@ -1,6 +1,7 @@
 package com.portal.backend.portalNews.service;
 
 import com.portal.backend.portalNews.dao.INewDao;
+import com.portal.backend.portalNews.model.New;
 import com.portal.backend.portalNews.model.NewResponseRest;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +23,7 @@ public class NewServiceImpl  implements INewService {
     @Transactional
     public ResponseEntity<NewResponseRest> save(New news) {
 
-        NewResponseRest newResponseRest = new NewResponseRest();
+        NewResponseRest response = new NewResponseRest();
         List<New> list = new ArrayList<>();
 
         try {
@@ -34,7 +35,7 @@ public class NewServiceImpl  implements INewService {
                 response.setMetadata("response ok", "00", "new saved");
 
             } else {
-                response.SetMetadata("response error", "01", "new not saved");
+                response.setMetadata("response error", "01", "new not saved");
                 return new ResponseEntity<NewResponseRest>(response, HttpStatus.BAD_REQUEST);
             }
         } catch (Exception e) {
@@ -44,5 +45,5 @@ public class NewServiceImpl  implements INewService {
         return new ResponseEntity<NewResponseRest>(response, HttpStatus.OK);
     }
 
-    // Other methods can be implemented here as needed
+
 }
